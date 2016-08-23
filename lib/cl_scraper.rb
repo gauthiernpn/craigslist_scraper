@@ -19,4 +19,9 @@ parse_page.css('.content').css('.row').css('.hdrlnk').map do |a|
   pets_array.push(post_name)
 end
 
-Pry.start(binding)
+# This will push the array into a the csv file. ( Type 'touch pets.csv'in Terminal to create the csv file. )
+CSV.open('pets.csv', 'w')do |csv|
+  csv << pets_array
+end
+
+#Pry.start(binding)
